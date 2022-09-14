@@ -24,6 +24,10 @@ app.get('/', (req, res) => {
     res.render('login', options);
 });
 
+app.get('/admin', (req, res)=>{
+    res.render('admin')
+})
+
 app.post('/', async (req, res)=> {
     if (req.body.email === '' || req.body.password === '')
 return res.render('login', {message: 'Neįvesti prisijungimo duomenys', status: 'danger'})
