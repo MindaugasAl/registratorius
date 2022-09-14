@@ -1,0 +1,22 @@
+<main class="form-signin w-100 m-auto">
+  <form>
+    <h1 class="h3 mb-3 fw-normal">Prisijunkite</h1>
+
+{{#if message}}
+<div class="alert alert-{{status}}">{{{message}}}</div>
+{{/if}}
+ 
+    <div class="form-floating">
+      <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <label for="floatingInput">El., paštas</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <label for="floatingPassword">Slaptažodis</label>
+    </div>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Prisijungti</button>
+
+    <p><a href="/register">Registracija</a></p>
+    
+  </form>
+</main>

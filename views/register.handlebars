@@ -1,0 +1,24 @@
+<main class="form-signin form-signup w-100 m-auto">
+  <form class="registerForm">
+    <h1 class="h3 mb-3 fw-normal">Registruotis</h1>
+{{#if message}}
+<div class="alert alert-{{status}}">{{{message}}}</div>
+{{/if}}
+    <div class="form-floating">
+      <input type="text" name="name" class="form-control"  placeholder="Jūsų vardas">
+      <label>Jūsų vardas</label>
+    </div>
+
+    <div class="form-floating">
+      <input type="email" name="email" class="form-control"  placeholder="name@example.com">
+      <label >El., paštas</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" name="password" class="form-control"  placeholder="Password">
+      <label >Slaptažodis</label>
+    </div>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Registruotis</button>
+    <p><a href="/">Prisijungimas</a></p>
+    
+  </form>
+</main>

@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Gudžius",
+        "email": "gudzius@gmail.com",
+        "password": "123123"
+    },
+    {
+        "name": "Petras",
+        "email": "petras@petras.gmail",
+        "password": "123123"
+    },
+    {
+        "name": "Kristina",
+        "email": "kristina@gmail.com",
+        "password": "123123"
+    },
+    {
+        "name": "Mindaugas",
+        "email": "minals99@gmail.com",
+        "password": "123123"
+    },
+    {
+        "name": "Barsukas",
+        "email": "barsukas@gmail.com",
+        "password": "123123"
+    },
+    {
+        "name": "Mantas",
+        "email": "mantas@gmail.com",
+        "password": "123123"
+    },
+    {
+        "name": "Balius",
+        "email": "balius@gmail.com",
+        "password": "123123"
+    },
+    {
+        "name": "Bildukas",
+        "email": "bildukas@gmail.com",
+        "password": "123123"
+    }
+]
