@@ -10,6 +10,9 @@ app.set('view engine', 'handlebars');
 app.set('views', './views');
 
 app.use('/public', express.static('public'))
+app.use(express.urlencoded({
+    extended: true
+}))
 
 app.get('/', (req, res) => {
     const options = {}
@@ -20,6 +23,11 @@ app.get('/', (req, res) => {
     }
     res.render('login', options);
 });
+
+app.post('/', (req, res)=> {
+    if (req.body.email === '' || req.body.password === '')
+return res.render('login', {message: 'Neįvesti prisijungimo duomenys', status: 'danger'})
+})
 
 app.get('/register', async (req, res) => {
     if (
