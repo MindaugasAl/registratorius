@@ -24,9 +24,20 @@ app.get('/', (req, res) => {
     res.render('login', options);
 });
 
-app.post('/', (req, res)=> {
+app.post('/', async (req, res)=> {
     if (req.body.email === '' || req.body.password === '')
 return res.render('login', {message: 'Neįvesti prisijungimo duomenys', status: 'danger'})
+
+try{
+const data = await fs.readFile(file, 'utf8')
+if (!JSON.parse(data).find(user => user.email === req.body.email && user.password === req.body.password)) 
+     return res.render('login', {message: 'Neteisingi prisijungimo duomenys', status: 'danger'})
+
+     return res.redirect('/admin')
+}catch{
+    return res.render('login', {message: 'Duomenų bazės failas nerastas', status: 'danger'})
+}
+
 })
 
 app.get('/register', async (req, res) => {
