@@ -77,6 +77,16 @@ app.get('/admin', async (req, res)=>{
     res.render('admin', {users})
 })
 
+app.get('/delete/:id', async (req,res) =>{
+    try{
+    const data = await fs.readFile(file,'utf8')
+    let users = JSON.parse(data)
+    users = users.filter((user, index) => index != req.params.id)
+    await fs.writeFile(file, JSON.stringify(users, null, 4))
+    res.redirect('/admin')
+} catch{
 
+}
+})
 
 app.listen(3000);
