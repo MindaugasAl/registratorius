@@ -43,31 +43,35 @@ app.post('/', async (req, res) => {
 })
 
 app.get('/register', async (req, res) => {
+   
+    res.render('register')
+})
+
+app.post('/register', async (req, res) =>{
     if (
-        JSON.stringify(req.query) !== '{}' &&
-        req.query.name !== '' &&
-        req.query.email !== '' &&
-        req.query.password !== '') {
+        JSON.stringify(req.body) !== '{}' &&
+        req.body.name !== '' &&
+        req.body.email !== '' &&
+        req.body.password !== '') {
 
         try {
             let data = await fs.readFile(file, 'utf8');
             data = JSON.parse(data)
-            if (data.find(user => user.email === req.query.email)) {
+            if (data.find(user => user.email === req.body.email)) {
                 return res.render('register', { message: 'Toks el., paštas jau registruotas', status: 'danger' })
             }
-            data.push(req.query)
+            data.push(req.body)
             await fs.writeFile(file, JSON.stringify(data, null, 4))
             // return res.render('register', { message: 'Vartotojas sėkmingai užregistruotas <a href="/">prisijunkite</a>', status: 'success' })
             return res.redirect("/?status=1")
         } catch {
-            await fs.writeFile(file, JSON.stringify([req.query], null, 4))
+            await fs.writeFile(file, JSON.stringify([req.body], null, 4))
         }
 
     } else {
         return res.render('register', { message: 'Prašome užsiregitruoti', status: 'danger' })
 
     }
-    res.render('register')
 })
 
 app.get('/admin', async (req, res) => {
@@ -97,5 +101,6 @@ app.get('/delete/:id', async (req, res) => {
         res.redirect('/admin?success=0')
     }
 })
+
 
 app.listen(3000);
