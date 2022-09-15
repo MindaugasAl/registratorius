@@ -1,42 +1,52 @@
 [
     {
-        "name": "Mantas",
-        "email": "mantas@gmail.com",
-        "password": "123123"
-    },
-    {
-        "name": "Balius",
-        "email": "balius@gmail.com",
-        "password": "123123"
-    },
-    {
-        "name": "Bildukas",
-        "email": "bildukas@gmail.com",
-        "password": "123123"
-    },
-    {
-        "name": "Baravykas",
-        "email": "baravykas@gmail.com",
-        "password": "123123"
-    },
-    {
         "name": "Rokas",
         "email": "rokas@gmail.com",
         "password": "123123"
     },
     {
-        "name": "Dundulis",
-        "email": "dundulis@gmail.com",
+        "name": "Mindaugas",
+        "email": "minals99@gmail.com",
         "password": "123123"
     },
     {
-        "name": "Griaustinis",
-        "email": "griaustinis@gmail.com",
-        "password": "123123"
+        "name": "Kristina",
+        "email": "kristina@gmail.com",
+        "password": "123"
+    },
+    {
+        "name": "Darius",
+        "email": "darius@gmail.com",
+        "password": "45673"
+    },
+    {
+        "name": "Albinas",
+        "email": "albinas@gmail.com",
+        "password": "45894132"
+    },
+    {
+        "name": "Andrius",
+        "email": "andrius@gmail.com",
+        "password": "765546456456"
     },
     {
         "name": "Petras",
         "email": "petras@petras.gmail",
-        "password": "123123"
+        "password": "456456"
+    },
+    {
+        "name": "Antanas",
+        "email": "antanas@gmail.com",
+        "password": "45646456456"
+    },
+    {
+        "name": "Anupras",
+        "email": "anupras@aasd.lt",
+        "password": "6456456456456"
+    },
+    {
+        "name": "Mantas",
+        "email": "mantas@gmail.com",
+        "password": "456gjkghk"
     }
 ]

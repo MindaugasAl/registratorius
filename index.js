@@ -5,6 +5,7 @@ import fs from 'fs/promises'
 const app = express();
 const file = './duomenys.json'
 
+
 app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
 app.set('views', './views');
