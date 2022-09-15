@@ -1,11 +1,12 @@
 <div class="container">
+    <h1>Prisiregistravę vartotojai:</h1>
     <table class="table table-bordered table-hover">
     <thead class="table-light">
         <tr>
             <th>Vardas</th>
             <th>El., paštas</th>
             <th>Slaptažodis</th>
-            <th>Koreguoti</th>
+            {{!-- <th>Koreguoti</th> --}}
             <th>Trinti</th>
         </tr>
     </thead>
@@ -15,8 +16,8 @@
             <td>{{this.name}}</td>
             <td>{{this.email}}</td>
             <td>{{this.password}}</td>
-            <td><button>Koreguoti</button></td>
-            <td><button>Trinti</button></td>
+            {{!-- <td><button>Koreguoti</button></td> --}}
+            <td><a href="{{@key}}" class="btn btn-outline-danger">Trinti</a></td>
         </tr>
         {{/each}}
     </tbody>
