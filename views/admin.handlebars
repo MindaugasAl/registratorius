@@ -1,9 +1,12 @@
-<table class="table">
-    <thead>
+<div class="container">
+    <table class="table table-bordered table-hover">
+    <thead class="table-light">
         <tr>
-            <td>Vardas</td>
-            <td>El., paštas</td>
-            <td>Slaptažodis</td>
+            <th>Vardas</th>
+            <th>El., paštas</th>
+            <th>Slaptažodis</th>
+            <th>Koreguoti</th>
+            <th>Trinti</th>
         </tr>
     </thead>
     <tbody>
@@ -12,8 +15,10 @@
             <td>{{this.name}}</td>
             <td>{{this.email}}</td>
             <td>{{this.password}}</td>
+            <td><button>Koreguoti</button></td>
+            <td><button>Trinti</button></td>
         </tr>
         {{/each}}
     </tbody>
 </table>
-
+</div>
