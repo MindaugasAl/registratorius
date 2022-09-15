@@ -1,12 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Labass</h1>
-</body>
-</html>
+<table class="table">
+    <thead>
+        <tr>
+            <td>Vardas</td>
+            <td>El., paštas</td>
+            <td>Slaptažodis</td>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each users}}
+        <tr>
+            <td>{{this.name}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.password}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
