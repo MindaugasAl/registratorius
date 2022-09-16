@@ -16,7 +16,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
     cookie: { 
-                maxAge: 60000
+                maxAge: 600000
     }
   }))
 
@@ -104,9 +104,6 @@ app.get('/admin', auth, async (req, res) => {
 })
 
 app.get('/delete/:id', auth ,async (req, res) => {
-    // if(!req.session.loggedIn)
-    // return res.redirect('/')
-    
     try {
         const data = await fs.readFile(file, 'utf8')
         let users = JSON.parse(data)
@@ -118,5 +115,36 @@ app.get('/delete/:id', auth ,async (req, res) => {
     }
 })
 
+app.get('/edit/:id', auth, async (req, res) => {
+    const id = req.params.id
+    try {
+        const data = await fs.readFile(file, 'utf8')
+        const user = JSON.parse(data).find((value, index) => index == id)
+        res.render('edit', user)
+    } catch {
+        res.render('edit', { message: 'Nepavyko perskaityti failo', status: 'danger'})
+    }
+})
+
+app.post('/edit/:id', auth, async (req, res) => {
+    const id = req.params.id
+
+    if(
+        JSON.stringify(req.body) != '{}' &&
+        req.body.name !== '' &&
+        req.body.email !== '' &&
+        req.body.password !== ''
+    ) {
+        try {
+            let data = await fs.readFile(file, 'utf8')
+            data = JSON.parse(data)
+            data[id] = req.body
+            await fs.writeFile( file, JSON.stringify(data, null, 4))
+            res.redirect('/admin?message=Duomenys sėkmingai pakeisti&status=success')
+        } catch {
+            res.redirect('/admin?message=Įvyko klaida&status=danger')
+        }
+    }
+})
 
 app.listen(3000);

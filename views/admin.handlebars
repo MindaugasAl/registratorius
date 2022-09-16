@@ -11,7 +11,7 @@
             <th>Vardas</th>
             <th>El., paštas</th>
             <th>Slaptažodis</th>
-            {{!-- <th>Koreguoti</th> --}}
+            <th>Koreguoti</th>
             <th>Trinti</th>
         </tr>
     </thead>
@@ -21,7 +21,7 @@
             <td>{{this.name}}</td>
             <td>{{this.email}}</td>
             <td>{{this.password}}</td>
-            {{!-- <td><button>Koreguoti</button></td> --}}
+            <td><a href="/edit/{{@key}}" class="btn btn-outline-primary">Redaguoti</a></td>
             <td><a href="/delete/{{@key}}" class="btn btn-outline-danger">Trinti</a></td>
         </tr>
         {{/each}}

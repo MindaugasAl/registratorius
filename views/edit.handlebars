@@ -1,0 +1,23 @@
+<div class="container">
+  <form method="POST" class="formEdit">
+    <h1 class="h3 mb-3 fw-normal">Redaguoti</h1>
+ 
+    {{#if message}}
+        <div class="alert alert-{{status}}">{{{message}}}</div>
+    {{/if}}
+    
+    <div class="form-floating mb-2">
+      <input type="text" name="name" class="form-control" placeholder="Enter your name" value="{{name}}">
+      <label>Your name</label>
+    </div>
+    <div class="form-floating mb-2">
+      <input type="email" name="email" class="form-control" placeholder="name@example.com" value="{{email}}">
+      <label>Email address</label>
+    </div>
+    <div class="form-floating mb-2">
+      <input type="text" name="password" class="form-control" placeholder="Password" value="{{password}}">
+      <label>Password</label>
+    </div>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Redaguoti</button>
+  </form>
+</div>
