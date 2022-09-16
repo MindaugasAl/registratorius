@@ -16,7 +16,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
     cookie: { 
-                maxAge: 600000
+                maxAge: 60000
     }
   }))
 
@@ -89,18 +89,14 @@ app.post('/register', async (req, res) =>{
 
 
 app.get('/admin', auth, async (req, res) => {
-        const data = await fs.readFile(file, 'utf8')
+    const data = await fs.readFile(file, 'utf8')
     const users = JSON.parse(data)
     const options = { users }
-    if (req.query.success == 1){
-        options.message = 'Duomenys sėkmingai ištrinti'
-        options.status = 'success'
-    }
-    if(req.query.success == 0){
-        options.message = 'Nepavyko ištrinti duomenų'
-        options.status = 'danger'
-    }
-    res.render('admin',  options)
+
+    options.message = req.query.message
+    options.status = req.query.status
+
+    res.render('admin', options)
 })
 
 app.get('/delete/:id', auth ,async (req, res) => {
@@ -109,9 +105,9 @@ app.get('/delete/:id', auth ,async (req, res) => {
         let users = JSON.parse(data)
         users = users.filter((user, index) => index != req.params.id)
         await fs.writeFile(file, JSON.stringify(users, null, 4))
-        res.redirect('/admin?success=1')
+        res.redirect('/admin?message=Vartotojas sėkmingai ištrintas&status=success')
     } catch {
-        res.redirect('/admin?success=0')
+        res.redirect('/admin?message=Įvyko klaida&status=danger')
     }
 })
 
